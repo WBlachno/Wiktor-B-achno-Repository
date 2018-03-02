@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+	<head>
+	
+		<meta charset="utf-8" />
+		<title>Shopping Cart</title>
+		<link href="css/style.css" rel="stylesheet" media="all" />
+		
+		<!--Bootstrap !-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	
+	</head>
+	
+	<body>
+		<select id="currency" class="form-control">
+			<option>Choose your currency</option>			
+			<option value="dolar">USD</option>
+			<option value="zloty">PLN</option>
+			<option value="euro">EUR</option>
+			<option value="pound">GBP</option>
+		</select>
+	
+		<div>
+		
+			<h2 class="text-center">You have <span id="basket">0</span> items in your basket</h2>
+			
+			<ul id="item-list" style="float:left;"></ul>
+			<!-- Slider>
+			<div id="slider" class="carousel slide" data-ride="carousel">
+				  <ol class="carousel-indicators">
+					<li data-target="#slider" data-slide-to="0" class="active"></li>
+					<li data-target="#slider" data-slide-to="1"></li>
+					<li data-target="#slider" data-slide-to="2"></li>
+				  </ol>
+				  <div class="carousel-inner">
+					<div class="carousel-item active">
+					  <img class="d-block w-100" src="img/pro.jpg" alt="First slide">
+					</div>
+					<div class="carousel-item">
+					  <img class="d-block w-100" src="img/air.jpg" alt="Second slide">
+					</div>
+					<div class="carousel-item">
+					  <img class="d-block w-100" src="img/macbook.jpg" alt="Third slide">
+					</div>
+				  </div>
+				  <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				  </a>
+				</div>
+			-->
+			
+			<table class="table table-hover">
+				<tbody id="shopping-list"></tbody>
+				<tfoot>
+
+						<td>Total</td>
+						<td colspan='4' id="total">0.00</td>
+				</tfoot>
+			</table>
+		</div>
+		
+
+		
+		<script type="text/template" id="tmp-shoppingListItem">
+			<a class="name"><%= title %></a>
+			<span class="price"><%= price.toFixed(2) %> <%= currencySign%></span>
+		</script>
+		
+		<script type="text/template" id="tmp-shoppingCartItem">
+			<td class="name"><%=title %></td>
+			<td class="quantity-total">Quanity: <%= quantity %> </td>
+	    	<td ><a class="quantity" data-type="increase" id="increase"><a class="quantity"  data-type="decrease" id="decrease"></a></a></td>
+	    	<td class="sub-total"><%= total.toFixed(2) %> <%= currencySign%></td>
+		</script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/lib/underscore-min.js"></script>
+		<script src="js/lib/backbone-min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+
+	
+	</body>
+
+</html>
